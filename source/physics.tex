@@ -1,0 +1,101 @@
+\documentclass[12pt]{article}
+\usepackage[utf8x]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[russian]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{wasysym}
+\usepackage{gensymb}
+\usepackage[left=1cm,right=1cm,top=1cm,bottom=2cm]{geometry}
+\usepackage{wrapfig}
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+\usepackage{hyperref}
+\frenchspacing
+\pretolerance1000
+\newcounter{step}
+\setcounter{step}{1}
+\newcommand{\reset}{\setcounter{step}{1}}
+\newcommand{\step}{(\arabic{step}) \addtocounter{step}{1}}
+\newcommand{\bref}[1]{(\ref{#1})}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\mC}{\mathbb{C}}
+\newcommand{\p}{\partial}
+\newcommand{\comment}[1]{}
+\newcommand{\np}{\newpage\noindent}
+\newcommand{\m}{^\text{m}}
+\DeclareMathOperator{\const}{const}
+\DeclareMathOperator{\Ree}{Re}
+
+\title{\textbf{Полезные формулы}}
+\date{2020\\ Декабрь}
+\author{Майнор ``Астрофизика'', 2 курс}
+\begin{document}
+\maketitle
+\section{Формулы}
+Единицы измерения неочевидных величин приведены в квадратных скобках в системе СИ. Будте осторожны, в СГС могут быть другие константы или они могут вообще отсутствовать. В случае, если формула приведена в СГС, это обязательно будет указано сбоку.
+\subsection{Разрешающая способность}
+\[\theta=1.22\frac\lambda d\sim\frac\lambda d\]
+$\theta$ --- угол в радианах, $\lambda$ --- длина волны, $d$ --- диаметр линзы (зеркала)
+\subsection{Связь светового потока и светимости}
+\[f=\frac{L}{4\pi d^2}\]
+$f\,[\text{Вт}/\text{м}^2]$ --- поток, $L\,[\text{Вт}]$ --- светимость, $d$ --- расстояние до звезды
+\subsection{Связь светового потока и видимой звездной величины}
+\[\frac{f_1}{f_2}=100^{\frac{-(m_1-m_2)}{5}}\quad\quad m_1-m_2=-2.5\log_{10}\left(\frac{f_1}{f_2}\right)\]
+$f\,[\text{Вт}/\text{м}^2]$ --- потоки, $m\,[^\text{m}]$ --- видимые звездные величины
+\subsection{Третий закон Кеплера}
+\[\left(\frac{a_1}{a_2}\right)^3=\left(\frac{T_1}{T_2}\right)^2\]
+$a$ --- большие полуоси орбит, $T$ --- периоды
+\subsection{Связь большой полуоси и периода для задачи двух тел}
+\[a^3=\frac{G\mu T^2}{4\pi^2}\quad\quad T=\frac{2\pi a^{\frac32}}{\sqrt{G\mu}}\]
+$a$ --- большая полуось, $\mu=m_1+m_2$ --- приведенная масса, $T$ --- период
+\subsection{Теорема Вириала}
+\[E_\text{полн}=-\frac12|E_\text{пот}|\]
+\[E_\text{кин}=\frac12|E_\text{пот}|\quad(\text{частный случай})\]
+\subsection{Время транзита}
+\[\frac{t}{T}=\frac{1}{\pi}\arcsin\frac Ra=\frac1\pi\arcsin R\left(\frac{4\pi^2}{GMT^2}\right)^{\frac13}\]
+$t$ --- время транзита, $T$ --- период, $R$ --- радиус звезды, $a$ --- большая полуось, $M$ --- масса звезды
+\subsection{Плотность энергии магнитного поля}
+\[\varepsilon=\frac{B^2}{8\pi}\quad(\text{СГС})\]
+$B\,[\text{Гс}]$ --- магнитная индукция, $\varepsilon\,[\text{Дж}/\text{м}^3]$ --- плотность энергии
+\subsection{Эддингтоновская светимость}
+\[L_\text{э}=10^{38}\frac{M}{M_{\astrosun}}\,\biggl[\frac{\text{эрг}}{\text{с}}\biggr]\quad(\text{СГС})\]
+\subsection{Шварцшильдский радиус}
+\[R_\text{ч.д.}=\frac{2GM}{c^2}\]
+\subsection{Уравнение Фридмана}
+\[H^2=\left(\frac{\dot{R}}{R}\right)=\frac{8\pi G}{3c^2}\varepsilon+c^2\frac{\Lambda}{3}-kc^2\frac{1}{R^2}\]
+$H\,[\text{с}^{-1}]$ --- ``постоянная Хаббла'', $R$ --- ``радиус'' Вселенной, $\varepsilon\,[\text{Дж}/\text{м}^3]$ --- плотность энергии вещества,\\
+$\Lambda$ --- космологическая постоянная, $k$ --- кривизна Вселенной
+\[k=\begin{cases}
+1, & \text{замкнутая (шар, Пуанкаре)}\\
+0, & \text{плоская (плоскость, Евклид)}\\
+-1, & \text{открытая (гиперболоид, Лобачевский)}
+\end{cases}\]
+\section{Константы и соотношения}
+\subsection{Звездные величины}
+\begin{center}\begin{tabular}{|c|c|}
+\hlineСветило & Видимая зв. величина\\
+\hlineВега & 0.03\\
+\hlineСириус & -1.46\\
+\hlineЛуна & -12.7\\
+\hlineСолнце & -26.7\\
+\hline
+\end{tabular}\end{center}
+Абсолютная звездная величина --- это видимая на расстоянии 10 пк.
+\subsection{Единицы измерения}
+\begin{align*}
+1\,\text{эВ}&=1.6\cdot10^{-12}\,\text{эрг}=1.6\cdot10^{-19}\,\text{Дж}\\
+1\,\text{а.\,е.}&=1.5\cdot10^{13}\,\text{см}=1.5\cdot10^{11}\,\text{м}\\
+1\,\text{св. год}&=9.5\cdot10^{17}\,\text{см}=63\,000\,\text{а.\,е.}\\
+1\,\text{пк}&=3.1\cdot10^{18}\,\text{см}=206\,000\,\text{а.\,е.}=3.26\ \text{св. года}
+\end{align*}
+\subsection{Константы}
+\begin{center}\begin{tabular}{|c|c|c|}
+\hlineПостоянная & Обозначение & Значение в СИ\\
+\hlineГравитационная & G & $6.67\cdot10^{-11}$ м$^3$с$^{-2}$кг$^{-1}$\\
+\hlineСкорость света & c & 300\,000\,000 м/с\\
+\hlineХаббла & H & $2.2\cdot10^{-18}$ с$^{-1}$\\
+\hline
+\end{tabular}\end{center}
+\end{document}
